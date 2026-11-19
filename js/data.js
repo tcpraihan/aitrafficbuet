@@ -14,7 +14,7 @@ window.SITE = {
       "Designing a reliable WAN system to automatically control traffic lights using AI-based real-time video analysis.",
     duration: "2 Years",
     fundedBy: "Government of Bangladesh",
-    github: "https://github.com/aitrafficbuet",
+    github: "https://github.com/tcpraihan/aitrafficbuet",
   },
 
   /* ---------- HERO CAROUSEL (the 5 dots in the sketch) ----------
@@ -87,7 +87,6 @@ window.SITE = {
       members: [
         { name: "Member Name", role: "Computer Vision", photo: "" },
         { name: "Member Name", role: "Backend & Dashboard", photo: "" },
-        { name: "Member Name", role: "Networking", photo: "" },
       ],
     },
     Civil: {
@@ -102,8 +101,9 @@ window.SITE = {
       label: "Electrical Engineering",
       focus: "PCB design, STM32 firmware (C), Jetson Orin Nano model deployment, power & signal I/O.",
       members: [
-        { name: "Member Name", role: "Junior Embedded Engineer — PCB, STM32, Jetson", photo: "" },
-        { name: "Member Name", role: "Power & Hardware", photo: "" },
+        { name: "Raihan Amin Rana", role: "Junior Embedded Engineer — PCB, STM32, Jetson", photo: "" },
+        { name: "Nilotpaul Kundu", role: "Power & Hardware", photo: "" },
+        { name: "Ahnaf Olee", role: "Power & Hardware", photo: "" },
       ],
     },
     ME: {
