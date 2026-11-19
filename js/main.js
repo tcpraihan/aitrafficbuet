@@ -168,6 +168,24 @@
     })
     .catch(() => {});
 
+  /* ---------- Auto-videos: every video in assets/videos/ (videos.json from workflow) ---------- */
+  const nameToCaption = (f) => {
+    const c = f.replace(/\.[^.]+$/, "").replace(/^\d+[-_ ]+/, "").replace(/[-_]+/g, " ").trim();
+    return c.charAt(0).toUpperCase() + c.slice(1);
+  };
+  fetch("assets/videos/videos.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : []))
+    .then((files) => {
+      if (!files.length) return;
+      $("#videos").innerHTML = files.map((f) => {
+        const cap = nameToCaption(f);
+        return `<figure class="reveal"><video src="${encodeURI("assets/videos/" + f)}" controls preload="metadata" playsinline></video><figcaption>${esc(cap)}</figcaption></figure>`;
+      }).join("");
+      $("#videosBlock").hidden = false;
+      $$("#videos .reveal").forEach((el) => io.observe(el));
+    })
+    .catch(() => {});
+
   /* ---------- LIGHTBOX ---------- */
   const lb = $("#lightbox"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
   let lbList = [], lbI = 0;
