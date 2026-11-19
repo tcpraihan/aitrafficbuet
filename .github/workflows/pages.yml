@@ -18,6 +18,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: List photos for the gallery
+        run: |
+          cd assets/img/photos
+          python3 -c "import os,json; f=sorted(x for x in os.listdir('.') if x.lower().endswith(('.jpg','.jpeg','.png','.webp','.gif','.avif'))); json.dump(f,open('photos.json','w'),indent=1); print(len(f),'photos')"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
