@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intelligent Adaptive Traffic Control System for Dhaka City · BRTC, BUET</title>
+  <meta name="description" content="AI-based real-time video analysis and STM32 controllers for adaptive traffic signal control in Dhaka — BRTC, BUET." />
+  <meta property="og:title" content="Intelligent Adaptive Traffic Control System for Dhaka City" />
+  <meta property="og:description" content="AI-driven adaptive traffic signals for Dhaka — BRTC, BUET." />
+  <meta property="og:image" content="assets/img/system-architecture.png" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-lights"><i></i><i></i><i></i></span>
+        <span class="brand-text"><b>AI Traffic</b><small>BRTC · BUET</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#team">Team</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HOME ================= -->
+    <section id="home" class="section-home">
+      <div class="hero" id="hero">
+        <div class="hero-track" id="heroTrack"></div>
+        <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide">&#8249;</button>
+        <button class="hero-arrow next" id="heroNext" aria-label="Next slide">&#8250;</button>
+        <div class="hero-dots" id="heroDots"></div>
+      </div>
+
+      <div class="wrap">
+        <div class="stats" id="stats"></div>
+
+        <div class="overview">
+          <div>
+            <p class="eyebrow">About the project</p>
+            <h2 id="projTitle"></h2>
+            <p class="lead" id="projSummary"></p>
+            <p>Dhaka's intersections are still largely run on fixed timers or manual control, while the traffic is some of the most mixed and variable in the world: buses, cars, CNG auto-rickshaws, cycle-rickshaws, motorbikes and pedestrians share the same road. This project measures what is actually happening at every approach with cameras and on-site AI, then lets the signal controller give green time where it is needed.</p>
+            <ul class="facts">
+              <li><span>Key responsibilities</span>PCB design, STM32 programming (C), Jetson Orin Nano model training</li>
+              <li><span>Funded by</span><b id="fundedBy"></b></li>
+              <li><span>Duration</span><b id="duration"></b></li>
+            </ul>
+            <a class="btn" href="#simulation">Try the optimization simulation →</a>
+          </div>
+          <figure class="overview-fig">
+            <img src="assets/img/system-architecture.png" alt="System architecture: video camera, AI processing, STM32 microcontroller, traffic intersection and central server" loading="lazy" data-lightbox />
+            <figcaption>System architecture</figcaption>
+          </figure>
+        </div>
+
+        <div class="block-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From camera frame to green light</h2>
+        </div>
+        <div class="pipeline" id="pipeline"></div>
+      </div>
+
+      <!-- ===== SIMULATION ===== -->
+      <div id="simulation" class="sim-section">
+        <div class="wrap">
+          <div class="block-head light">
+            <p class="eyebrow">Interactive</p>
+            <h2>Signal-timing optimization simulator</h2>
+            <p>Two identical intersections receive <b>exactly the same vehicles</b>. Pick a controller for each side and compare queues and delay. Fixed-time is how most signals run today; <b>Webster</b> is the classic optimal fixed plan; <b>Adaptive (AI)</b> uses camera-measured queues, like this project.</p>
+          </div>
+
+          <div class="sim-controls">
+            <div class="ctrl-group">
+              <label>Scenario</label>
+              <select id="scenario">
+                <option value="morning">Morning peak (N–S heavy)</option>
+                <option value="balanced">Balanced</option>
+                <option value="evening">Evening peak (E–W heavy)</option>
+                <option value="offpeak">Off-peak</option>
+                <option value="shifting">Shifting demand (time-varying)</option>
+                <option value="custom">Custom</option>
+              </select>
+            </div>
+            <div class="ctrl-group rates">
+              <label>Arrivals (veh/min)</label>
+              <div class="rate"><span>N</span><input type="range" id="rN" min="0" max="30" step="1"><output id="oN"></output></div>
+              <div class="rate"><span>S</span><input type="range" id="rS" min="0" max="30" step="1"><output id="oS"></output></div>
+              <div class="rate"><span>E</span><input type="range" id="rE" min="0" max="30" step="1"><output id="oE"></output></div>
+              <div class="rate"><span>W</span><input type="range" id="rW" min="0" max="30" step="1"><output id="oW"></output></div>
+            </div>
+            <div class="ctrl-group">
+              <label>Simulation</label>
+              <div class="btn-row">
+                <button class="btn sm" id="simPlay">Pause</button>
+                <button class="btn sm ghost" id="simReset">Reset</button>
+              </div>
+              <label class="mt">Speed</label>
+              <div class="seg" id="simSpeed">
+                <button data-s="1">1×</button><button data-s="4" class="on">4×</button><button data-s="10">10×</button><button data-s="25">25×</button>
+              </div>
+              <div class="clock">Sim time <b id="simClock">00:00</b></div>
+            </div>
+          </div>
+
+          <div class="sim-grid">
+            <div class="sim-panel" data-side="A">
+              <div class="sim-panel-head">
+                <span class="tag a">A</span>
+                <select class="ctrl-select" id="ctrlA">
+                  <option value="fixed" selected>Fixed-time</option>
+                  <option value="webster">Webster optimal (fixed)</option>
+                  <option value="actuated">Actuated (gap-out)</option>
+                  <option value="adaptive">Adaptive (AI · queue pressure)</option>
+                </select>
+              </div>
+              <canvas id="canvasA" width="460" height="460"></canvas>
+              <div class="metrics" id="metricsA"></div>
+            </div>
+            <div class="sim-panel" data-side="B">
+              <div class="sim-panel-head">
+                <span class="tag b">B</span>
+                <select class="ctrl-select" id="ctrlB">
+                  <option value="fixed">Fixed-time</option>
+                  <option value="webster">Webster optimal (fixed)</option>
+                  <option value="actuated">Actuated (gap-out)</option>
+                  <option value="adaptive" selected>Adaptive (AI · queue pressure)</option>
+                </select>
+              </div>
+              <canvas id="canvasB" width="460" height="460"></canvas>
+              <div class="metrics" id="metricsB"></div>
+            </div>
+          </div>
+
+          <div class="sim-bottom">
+            <div class="chart-card">
+              <div class="chart-head"><h3>Vehicles queued over time</h3><div class="legend"><span class="la">A</span><span class="lb">B</span></div></div>
+              <canvas id="queueChart" width="900" height="240"></canvas>
+            </div>
+            <div class="chart-card">
+              <h3>Fixed-time settings</h3>
+              <div class="rate"><span>N–S green</span><input type="range" id="gNS" min="10" max="90" step="1"><output id="oNS"></output></div>
+              <div class="rate"><span>E–W green</span><input type="range" id="gEW" min="10" max="90" step="1"><output id="oEW"></output></div>
+              <h3 class="mt">Webster optimization</h3>
+              <div class="webster" id="websterBox"></div>
+              <button class="btn sm" id="applyWebster">Apply Webster plan to Fixed-time</button>
+              <p class="note">Amber 3 s · all-red 2 s · saturation flow 1500 veh/h/lane · left-hand traffic · vehicle mix: car, bus, CNG, rickshaw.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="block-head">
+          <p class="eyebrow">Gallery</p>
+          <h2>Project in pictures</h2>
+        </div>
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </section>
+
+    <!-- ================= TEAM ================= -->
+    <section id="team" class="section">
+      <div class="wrap">
+        <div class="block-head">
+          <p class="eyebrow">Team</p>
+          <h2>The people behind the signals</h2>
+          <p>A multidisciplinary team across Computer Science, Civil, Electrical and Mechanical Engineering.</p>
+        </div>
+
+        <h3 class="sub">Team Leaders</h3>
+        <div class="leaders" id="leaders"></div>
+
+        <h3 class="sub">Sub-teams</h3>
+        <div class="tabs" id="teamTabs"></div>
+        <div class="team-panel" id="teamPanel"></div>
+      </div>
+    </section>
+
+    <!-- ================= RESOURCES ================= -->
+    <section id="resources" class="section alt">
+      <div class="wrap">
+        <div class="block-head">
+          <p class="eyebrow">Resources</p>
+          <h2>Funding, technology & documents</h2>
+        </div>
+
+        <h3 class="sub">Funding & partners</h3>
+        <div class="funding" id="funding"></div>
+
+        <h3 class="sub">Technology stack</h3>
+        <div class="tech-wrap">
+          <div class="tech" id="tech"></div>
+          <div class="tech-imgs">
+            <img src="assets/img/controller-pcb.svg" alt="STM32 controller board illustration" loading="lazy" data-lightbox />
+            <img src="assets/img/edge-ai.svg" alt="Edge AI module illustration" loading="lazy" data-lightbox />
+            <img src="assets/img/wan-network.svg" alt="WAN network illustration" loading="lazy" data-lightbox />
+            <img src="assets/img/field-install.svg" alt="Field installation illustration" loading="lazy" data-lightbox />
+          </div>
+        </div>
+
+        <h3 class="sub">Documents & links</h3>
+        <div class="docs" id="docs"></div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <div class="block-head">
+          <p class="eyebrow">Contact</p>
+          <h2>Get in touch</h2>
+          <p>For collaboration, data access, site visits or media enquiries.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="ci"><span>Address</span><p id="cAddress"></p></div>
+            <div class="ci" id="cEmailWrap"><span>Email</span><p><a id="cEmail"></a></p></div>
+            <div class="ci" id="cPhoneWrap"><span>Phone</span><p id="cPhone"></p></div>
+            <div class="ci"><span>GitHub</span><p><a id="cGithub" target="_blank" rel="noopener"></a></p></div>
+            <iframe class="map" id="cMap" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <label>Name<input name="name" required /></label>
+            <label>Email<input name="email" type="email" required /></label>
+            <label>Subject<input name="subject" /></label>
+            <label>Message<textarea name="message" rows="6" required></textarea></label>
+            <button class="btn" type="submit">Send message</button>
+            <p class="note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <b>Intelligent Adaptive Traffic Control System for Dhaka City</b>
+        <p>BRTC, Bangladesh University of Engineering and Technology</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a><a href="#team">Team</a><a href="#resources">Resources</a><a href="#contact">Contact</a>
+      </div>
+      <p class="copy">© <span id="year"></span> BRTC, BUET. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
+    <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    <button class="lb-nav next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/simulation.js"></script>
+</body>
+</html>

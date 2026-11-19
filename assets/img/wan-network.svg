@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0f1d2b"/>
+  <g stroke="#1e3348" stroke-width="10" fill="none" stroke-linecap="round"><path d="M0 120 Q200 140 380 110 T800 140"/><path d="M0 330 Q250 300 420 340 T800 310"/><path d="M160 0 Q190 250 150 500"/><path d="M420 0 Q400 230 450 500"/><path d="M660 0 Q640 260 690 500"/></g>
+  <path d="M520 0 Q560 120 540 220 Q520 330 600 500" stroke="#1d4a6e" stroke-width="22" fill="none" opacity=".6"/>
+  <g stroke="#3dd68c" stroke-width="2" stroke-dasharray="6 6" fill="none" opacity=".85">
+    <line x1="400" y1="240" x2="170" y2="125"/><line x1="400" y1="240" x2="390" y2="112"/><line x1="400" y1="240" x2="655" y2="132"/>
+    <line x1="400" y1="240" x2="160" y2="318"/><line x1="400" y1="240" x2="430" y2="338"/><line x1="400" y1="240" x2="675" y2="315"/>
+  </g>
+  <g fill="#ffcf3d">
+    <circle cx="170" cy="125" r="11"/><circle cx="390" cy="112" r="11"/><circle cx="655" cy="132" r="11"/><circle cx="160" cy="318" r="11"/><circle cx="430" cy="338" r="11"/><circle cx="675" cy="315" r="11"/>
+  </g>
+  <g fill="none" stroke="#ffcf3d" opacity=".35"><circle cx="170" cy="125" r="22"/><circle cx="390" cy="112" r="22"/><circle cx="655" cy="132" r="22"/><circle cx="160" cy="318" r="22"/><circle cx="430" cy="338" r="22"/><circle cx="675" cy="315" r="22"/></g>
+  <g font-family="sans-serif" font-size="14" fill="#d8e6f3">
+    <text x="186" y="112">Shahbagh</text><text x="404" y="98">Kataban</text><text x="600" y="110">Karwan Bazar</text><text x="70" y="350">Science Lab</text><text x="446" y="368">Matsya Bhaban</text><text x="610" y="350">Kakrail</text>
+  </g>
+  <rect x="352" y="204" width="96" height="72" rx="8" fill="#1a2c40" stroke="#3dd68c" stroke-width="3"/>
+  <g fill="#3dd68c"><rect x="366" y="216" width="68" height="10" rx="2"/><rect x="366" y="234" width="68" height="10" rx="2"/><rect x="366" y="252" width="68" height="10" rx="2"/></g>
+  <text x="400" y="300" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#3dd68c">Traffic Management Center</text>
+  <rect x="20" y="440" width="300" height="42" rx="6" fill="#000" opacity=".4"/>
+  <g font-family="monospace" font-size="13" fill="#d8e6f3"><circle cx="40" cy="461" r="6" fill="#ffcf3d"/><text x="54" y="466">Intersection node</text><line x1="190" y1="461" x2="220" y2="461" stroke="#3dd68c" stroke-width="2" stroke-dasharray="6 6"/><text x="228" y="466">WAN link</text></g>
+</svg>

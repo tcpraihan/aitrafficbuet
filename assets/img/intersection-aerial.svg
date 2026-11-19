@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#7f9a6a"/>
+  <g fill="#8fa97a"><rect x="0" y="0" width="300" height="300"/><rect x="500" y="0" width="300" height="300"/><rect x="0" y="500" width="300" height="300"/><rect x="500" y="500" width="300" height="300"/></g>
+  <g fill="#c9c3b4"><rect x="20" y="20" width="120" height="90" rx="4"/><rect x="160" y="40" width="110" height="140" rx="4"/><rect x="540" y="30" width="200" height="110" rx="4"/><rect x="560" y="170" width="90" height="100" rx="4"/><rect x="30" y="560" width="150" height="180" rx="4"/><rect x="200" y="620" width="70" height="120" rx="4"/><rect x="530" y="540" width="120" height="120" rx="4"/><rect x="670" y="560" width="100" height="200" rx="4"/></g>
+  <g fill="#5d7c4a"><circle cx="240" cy="230" r="18"/><circle cx="60" cy="200" r="22"/><circle cx="700" cy="240" r="20"/><circle cx="260" cy="560" r="16"/><circle cx="590" cy="720" r="24"/></g>
+  <rect x="300" y="0" width="200" height="800" fill="#3b3f45"/>
+  <rect x="0" y="300" width="800" height="200" fill="#3b3f45"/>
+  <g fill="#b9b3a3"><rect x="290" y="0" width="10" height="290"/><rect x="500" y="0" width="10" height="290"/><rect x="290" y="510" width="10" height="290"/><rect x="500" y="510" width="10" height="290"/><rect x="0" y="290" width="290" height="10"/><rect x="0" y="500" width="290" height="10"/><rect x="510" y="290" width="290" height="10"/><rect x="510" y="500" width="290" height="10"/></g>
+  <g stroke="#e9d27a" stroke-width="4" stroke-dasharray="26 18"><line x1="400" y1="0" x2="400" y2="260"/><line x1="400" y1="540" x2="400" y2="800"/><line x1="0" y1="400" x2="260" y2="400"/><line x1="540" y1="400" x2="800" y2="400"/></g>
+  <g fill="#eeeeee" opacity=".85">
+    <g id="zv"><rect x="310" y="262" width="14" height="30"/><rect x="334" y="262" width="14" height="30"/><rect x="358" y="262" width="14" height="30"/><rect x="382" y="262" width="14" height="30"/><rect x="406" y="262" width="14" height="30"/><rect x="430" y="262" width="14" height="30"/><rect x="454" y="262" width="14" height="30"/><rect x="478" y="262" width="14" height="30"/></g>
+    <use href="#zv" transform="translate(0 246)"/>
+    <use href="#zv" transform="rotate(90 400 400)"/>
+    <use href="#zv" transform="rotate(90 400 400) translate(0 246)"/>
+  </g>
+  <!-- vehicles queued -->
+  <g>
+    <rect x="410" y="560" width="30" height="56" rx="6" fill="#d94b3d"/><rect x="410" y="626" width="30" height="50" rx="6" fill="#f2f2f2"/><rect x="452" y="560" width="26" height="40" rx="6" fill="#2f8f46"/><rect x="410" y="686" width="30" height="96" rx="6" fill="#b8312f"/><rect x="452" y="612" width="26" height="40" rx="6" fill="#e0a43a"/>
+    <rect x="360" y="190" width="30" height="56" rx="6" fill="#3466a8"/><rect x="322" y="200" width="26" height="40" rx="6" fill="#2f8f46"/><rect x="360" y="120" width="30" height="60" rx="6" fill="#ececec"/>
+    <rect x="560" y="410" width="56" height="30" rx="6" fill="#ececec"/><rect x="626" y="410" width="100" height="32" rx="6" fill="#b8312f"/><rect x="560" y="452" width="40" height="26" rx="6" fill="#e0a43a"/>
+    <rect x="190" y="360" width="56" height="30" rx="6" fill="#2b2b2b"/><rect x="120" y="360" width="60" height="30" rx="6" fill="#d94b3d"/><rect x="210" y="322" width="40" height="26" rx="6" fill="#2f8f46"/><rect x="40" y="360" width="70" height="30" rx="6" fill="#3466a8"/>
+  </g>
+  <!-- detection boxes -->
+  <g fill="none" stroke="#3dff8a" stroke-width="3"><rect x="404" y="554" width="80" height="232"/><rect x="316" y="114" width="80" height="138"/></g>
+  <g fill="none" stroke="#ffcf3d" stroke-width="3"><rect x="554" y="404" width="178" height="80"/><rect x="34" y="316" width="222" height="80"/></g>
+  <g font-family="monospace" font-size="18" font-weight="bold">
+    <rect x="404" y="530" width="110" height="24" fill="#3dff8a"/><text x="410" y="548" fill="#0b2a16">Q=5 · 22s</text>
+    <rect x="316" y="90" width="110" height="24" fill="#3dff8a"/><text x="322" y="108" fill="#0b2a16">Q=3 · 14s</text>
+    <rect x="554" y="380" width="120" height="24" fill="#ffcf3d"/><text x="560" y="398" fill="#3a2c00">Q=3 · RED</text>
+    <rect x="34" y="292" width="120" height="24" fill="#ffcf3d"/><text x="40" y="310" fill="#3a2c00">Q=4 · RED</text>
+  </g>
+  <g><circle cx="282" cy="282" r="12" fill="#111"/><circle cx="282" cy="282" r="7" fill="#ff4d4d"/><circle cx="518" cy="518" r="12" fill="#111"/><circle cx="518" cy="518" r="7" fill="#ff4d4d"/><circle cx="518" cy="282" r="12" fill="#111"/><circle cx="518" cy="282" r="7" fill="#3dff8a"/><circle cx="282" cy="518" r="12" fill="#111"/><circle cx="282" cy="518" r="7" fill="#3dff8a"/></g>
+</svg>

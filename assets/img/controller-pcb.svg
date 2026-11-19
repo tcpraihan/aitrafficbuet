@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0e1a14"/>
+  <g opacity=".08" stroke="#3dff8a"><path d="M0 50h800M0 100h800M0 150h800M0 200h800M0 250h800M0 300h800M0 350h800M0 400h800M0 450h800"/><path d="M50 0v500M100 0v500M150 0v500M200 0v500M250 0v500M300 0v500M350 0v500M400 0v500M450 0v500M500 0v500M550 0v500M600 0v500M650 0v500M700 0v500M750 0v500"/></g>
+  <rect x="80" y="60" width="640" height="380" rx="18" fill="#1f6b3a" stroke="#14492a" stroke-width="6"/>
+  <g fill="#d9c27a"><circle cx="110" cy="90" r="10"/><circle cx="690" cy="90" r="10"/><circle cx="110" cy="410" r="10"/><circle cx="690" cy="410" r="10"/></g>
+  <g fill="none" stroke="#c9a94a" stroke-width="3" opacity=".75">
+    <path d="M400 250 H560 V140 H660"/><path d="M400 270 H580 V330 H660"/><path d="M340 250 H220 V150 H160"/><path d="M340 270 H200 V360 H160"/>
+    <path d="M370 210 V120 H300"/><path d="M380 310 V390 H480"/><path d="M420 210 V110 H520"/><path d="M360 310 V380 H260"/>
+  </g>
+  <!-- MCU -->
+  <rect x="320" y="190" width="140" height="140" rx="6" fill="#1b1e22"/>
+  <g fill="#c8ccd2">
+    <g id="pt"><rect x="330" y="182" width="6" height="10"/><rect x="344" y="182" width="6" height="10"/><rect x="358" y="182" width="6" height="10"/><rect x="372" y="182" width="6" height="10"/><rect x="386" y="182" width="6" height="10"/><rect x="400" y="182" width="6" height="10"/><rect x="414" y="182" width="6" height="10"/><rect x="428" y="182" width="6" height="10"/><rect x="442" y="182" width="6" height="10"/></g>
+    <use href="#pt" transform="translate(0 146)"/><use href="#pt" transform="rotate(90 390 260)"/><use href="#pt" transform="rotate(90 390 260) translate(0 146)"/>
+  </g>
+  <circle cx="338" cy="208" r="5" fill="#444"/>
+  <text x="390" y="255" text-anchor="middle" font-family="monospace" font-size="18" fill="#c8ccd2" font-weight="bold">ARM</text>
+  <text x="390" y="278" text-anchor="middle" font-family="monospace" font-size="13" fill="#8a9099">Cortex-M7</text>
+  <!-- relays / drivers -->
+  <g><rect x="560" y="110" width="100" height="56" rx="4" fill="#2a64c9"/><rect x="560" y="300" width="100" height="56" rx="4" fill="#2a64c9"/><text x="610" y="143" text-anchor="middle" font-family="monospace" font-size="13" fill="#fff">RELAY R/Y/G</text><text x="610" y="333" text-anchor="middle" font-family="monospace" font-size="13" fill="#fff">RELAY R/Y/G</text></g>
+  <!-- ethernet / lte -->
+  <rect x="120" y="120" width="70" height="60" rx="4" fill="#c8ccd2"/><rect x="132" y="134" width="46" height="32" fill="#333"/><text x="155" y="200" text-anchor="middle" font-family="monospace" font-size="12" fill="#e9f5ec">ETH</text>
+  <rect x="120" y="330" width="70" height="60" rx="4" fill="#333"/><text x="155" y="364" text-anchor="middle" font-family="monospace" font-size="12" fill="#e9f5ec">4G</text>
+  <!-- header pins -->
+  <g fill="#111"><rect x="250" y="400" width="300" height="22"/></g>
+  <g fill="#e1c46a"><circle cx="262" cy="411" r="4"/><circle cx="282" cy="411" r="4"/><circle cx="302" cy="411" r="4"/><circle cx="322" cy="411" r="4"/><circle cx="342" cy="411" r="4"/><circle cx="362" cy="411" r="4"/><circle cx="382" cy="411" r="4"/><circle cx="402" cy="411" r="4"/><circle cx="422" cy="411" r="4"/><circle cx="442" cy="411" r="4"/><circle cx="462" cy="411" r="4"/><circle cx="482" cy="411" r="4"/><circle cx="502" cy="411" r="4"/><circle cx="522" cy="411" r="4"/><circle cx="538" cy="411" r="4"/></g>
+  <g><rect x="250" y="90" width="22" height="14" fill="#c9c2a8"/><rect x="280" y="90" width="22" height="14" fill="#c9c2a8"/><rect x="480" y="100" width="14" height="22" fill="#c9c2a8"/><circle cx="500" cy="370" r="6" fill="#3dff8a"/><circle cx="520" cy="370" r="6" fill="#ff4d4d"/></g>
+  <text x="700" y="430" text-anchor="end" font-family="monospace" font-size="14" fill="#cfe9d6">ATCS-CTRL v1</text>
+</svg>
